@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   Email as EmailIcon,
   Facebook as FacebookIcon,
@@ -27,7 +27,6 @@ export default function Login() {
     password: "",
   });
   const [error, setError] = useState("");
-  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
   const router = useRouter();
 
@@ -73,10 +72,7 @@ export default function Login() {
     }
   };
 
-  useEffect(() => {
-    const isFormValid = formData.username !== "" && formData.password !== "";
-    setIsButtonDisabled(!isFormValid);
-  }, [formData]);
+  const isButtonDisabled = formData.username !== "" && formData.password !== "";
 
   return (
     <Wrapper>
