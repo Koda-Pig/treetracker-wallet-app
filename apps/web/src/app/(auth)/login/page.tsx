@@ -72,7 +72,8 @@ export default function Login() {
     }
   };
 
-  const isButtonDisabled = formData.username !== "" && formData.password !== "";
+  const isFormValid = formData.username !== "" && formData.password !== "";
+  const isButtonDisabled = !isFormValid;
 
   return (
     <Wrapper>
